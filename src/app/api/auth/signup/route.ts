@@ -41,7 +41,11 @@ export async function POST(request: Request) {
 
     console.log(savedUser)
 
-    return NextResponse.json(savedUser)
+    return NextResponse.json({
+      _id: savedUser._id,
+      email: savedUser.email,
+      fullname: savedUser.fullname,
+    })
   } catch (error) {
     console.log(error)
 
